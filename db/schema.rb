@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_10_232624) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_11_031423) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "shops", force: :cascade do |t|
     t.string "name"
-    t.integer "hours"
+    t.string "hours"
     t.boolean "open_year_round"
+    t.integer "established"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
