@@ -6,9 +6,19 @@ RSpec.describe "flavors index page" do
   # Then I see each Flavor in the system including the Flavor's attributes
   # (data from each column that is on the flavor table)
   it "can display shop's ice cream flavor's" do
-    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true)
+    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true, established: 1980)
     flavor_1 = shop.flavors.create!(flavor: "Chocolate", nut_free: true, calories: 600)
-    visit "shops/:shop_id/flavors"
+    visit "/shops/:shop_id/flavors"
     expect(page).to have_content(flavor_1.flavor)
   end
+  # As a visitor
+  # When I visit '/shops/:shop_id/flavors_table
+  # Then I see each Flavor that is associated with that Shop with each Flavor's attributes
+  it "can display name of shop for flavor" do
+    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true, established: 1980)
+    flavor_1 = shop.flavors.create!(flavor: "Chocolate", nut_free: true, calories: 600)
+    visit "/shops/#{shop.id}/flavors"
+    expect(page).to have_content(flavor_1.flavor)
+  end
+
 end

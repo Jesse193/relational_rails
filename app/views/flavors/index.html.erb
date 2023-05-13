@@ -1,5 +1,4 @@
 <h1>Flavors</h1>
-require 'pry'; binding.pry
 <% @flavors.each do |flavor| %>
-  <h3><%= flavor.flavor %></h3>
+  <h3 li><a href="/flavors/<%= flavor.id %>"><%= flavor.flavor %></h3></a></li>
 <% end %>
