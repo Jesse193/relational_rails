@@ -3,9 +3,9 @@
 
 <h1> Shops </h1>
 <% @shops.each do |shop| %>
-  <h3 li><a href="/shops/<%= shop.id %>"><%= shop.name %></h3></a></li>
-  <h4>created_at <%= shop.created_at %></h4>
+  <h3><%= link_to "#{shop.name}", "/shops/#{shop.id}" %></h3>
   <%= link_to "Update Shop", "/shops/#{shop.id}/edit" %>
+  <h4>created_at <%= shop.created_at %></h4>
 <% end %>
 
 <%= link_to "New Shop", "/shops/new" %>
