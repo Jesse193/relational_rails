@@ -1,9 +1,9 @@
 class ShopFlavorsController < ApplicationController
   def index
     @shop = Shop.find(params[:shop_id])
-    @flavors = @shop.flavors
+    @flavors = @shop.sort_by_alphabetical(params["sort"])
   end
-
+  
   def new
     @shop = Shop.find(params[:shop_id])
   end

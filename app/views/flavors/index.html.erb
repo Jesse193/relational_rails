@@ -3,5 +3,6 @@
 
 <h1>Flavors</h1>
 <% @flavors.each do |flavor| %>
-  <h3 li><a href="/flavors/<%= flavor.id %>"><%= flavor.flavor %></h3></a></li>
+  <h3><%= link_to "#{flavor.flavor}", "/flavors/#{flavor.id}" %></h3>
+  <%= link_to "Update Flavor", "/flavors/#{flavor.id}/edit" %>
 <% end %>

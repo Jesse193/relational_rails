@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   post "/shops/:shop_id/flavors", to: "shop_flavors#create"
   get "/flavors/:id/edit", to: "flavors#edit"
   patch "/flavors/:id", to: "flavors#update"
-
+  delete "/shops/:shop_id", to: "shops#destroy"
 end
