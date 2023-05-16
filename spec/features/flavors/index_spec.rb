@@ -20,5 +20,12 @@ RSpec.describe "flavors index page" do
     visit "/shops/#{shop.id}/flavors"
     expect(page).to have_content(flavor_1.flavor)
   end
-
+  # As a visitor
+  # When I visit any page on the site
+  # Then I see a link at the top of the page that takes me to the Flavor Index
+  it "can link to flavor index" do
+    visit "/"
+    click_link "All Flavors"
+    expect(current_path).to eq("/flavors")
+  end
 end

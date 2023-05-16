@@ -23,4 +23,12 @@ RSpec.describe "shops index page" do
     expect(page).to have_content(shop_2.created_at)
     expect(page).to have_content(shop_1.created_at)
   end
+  # As a visitor
+  # When I visit any page on the site
+  # Then I see a link at the top of the page that takes me to the Shop Index
+  it "can link to shop index" do
+    visit "/"
+    click_link "All Shops"
+    expect(current_path).to eq("/shops")
+  end
 end

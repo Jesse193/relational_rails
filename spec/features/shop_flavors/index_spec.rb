@@ -15,4 +15,16 @@ RSpec.describe "shop flavors" do
     expect(page).to have_content(flavor_1.calories)
     expect(page).to have_content(flavor_1.nut_free)
   end
+  # As a visitor
+  # When I visit a shop show page ('/shops/:id')
+  # Then I see a link to take me to that shop's `flavors` page ('/shops/:id/flavors')
+  it "can link to shop's flavors" do
+    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true, established: 1980)
+
+    visit "/shops/#{shop.id}"
+
+    click_link "#{shop.name} Flavors"
+    expect(current_path).to eq("/shops/#{shop.id}/flavors")
+  end
+
 end

@@ -16,6 +16,17 @@ RSpec.describe "shops shops attributes", type: :feature do
     expect(page).to have_content(shop_2.hours)
     expect(page).to have_content(shop_2.open_year_round)
     expect(page).to have_content(shop_2.established)
+  end
+  # As a visitor
+  # When I visit the shop's show page
+  # I see a count of the number of flavors associated with this shop
+  it "can display number of shop flavors" do
+    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 20:00", open_year_round: true, established: 1980)
+    flavor_1 = shop.flavors.create!(flavor: "Chocolate", nut_free: true, calories: 600)
+    flavor_2 = shop.flavors.create!(flavor: "Vanilla", nut_free: true, calories: 580)
 
+    visit "/shops/#{shop.id}"
+
+    expect(page).to have_content(shop.flavors.count)
   end
 end
