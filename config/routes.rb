@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get "/shops/:shop_id/flavors/new", to: "shop_flavors#new"
   get "/flavors/:id", to: "flavors#show"
   post "/shops/:shop_id/flavors", to: "shop_flavors#create"
+  get "/flavors/:id/edit", to: "flavors#edit"
+  patch "/flavors/:id", to: "flavors#update"
+
 end

@@ -1,0 +1,12 @@
+<%= form_with url: "/flavors/#{@flavor.id}", method: :patch, local: true do |form| %>
+  <%= form.label :flavor %>
+  <%= form.text_field :flavor %>
+
+  <%= form.label :nut_free %>
+  <%= form.text_field :nut_free %>
+
+  <%= form.label :calories %>
+  <%= form.text_field :calories %>
+
+  <%= form.submit "Update Flavor" %>
+<% end %>
