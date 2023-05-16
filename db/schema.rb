@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_222352) do
     t.string "flavor"
     t.boolean "nut_free"
     t.integer "calories"
-    t.bigint "shop_id", null: false
+    t.bigint "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_flavors_on_shops_id"

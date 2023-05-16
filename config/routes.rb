@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   get "/", to: "welcome#index"
   get "/shops", to: "shops#index"
+  get "/shops/new", to: "shops#new"
   get "/shops/:id", to: "shops#show"
-  get "/shops/:shop_id/flavors", to: "flavors#index"
-  get "flavors/:id", to: "flavors#show"
-  get "shops/:shop_id/flavors", to: "shop_flavors#index"
+  post "/shops", to: "shops#create"
+  get "/shops/:shop_id/flavors", to: "shop_flavors#index"
+  get "/flavors", to: "flavors#index"
+  get "/flavors/:id", to: "flavors#show"
 end

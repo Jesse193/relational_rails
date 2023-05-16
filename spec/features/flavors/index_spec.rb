@@ -7,9 +7,9 @@ RSpec.describe "flavors index page" do
   # (data from each column that is on the flavor table)
   it "can display shop's ice cream flavor's" do
     shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true, established: 1980)
-    flavor_1 = shop.flavors.create!(flavor: "Chocolate", nut_free: true, calories: 600)
-    visit "/shops/:shop_id/flavors"
-    expect(page).to have_content(flavor_1.flavor)
+    flavor = shop.flavors.create!(flavor: "Chocolate", nut_free: true, calories: 600)
+    visit "/shops/#{shop.id}/flavors"
+    expect(page).to have_content(flavor.flavor)
   end
   # As a visitor
   # When I visit '/shops/:shop_id/flavors_table

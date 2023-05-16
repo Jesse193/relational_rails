@@ -1,0 +1,16 @@
+<%= form_with url: "/shops", method: :post, local: true do |form| %>
+  
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :hours %>
+  <%= form.text_field :hours %>
+
+  <%= form.label :open_year_round %>
+  <%= form.text_field :open_year_round %>
+
+  <%= form.label :established %>
+  <%= form.text_field :established %>
+  
+  <%= form.submit "Create Shop" %>
+<% end %>
