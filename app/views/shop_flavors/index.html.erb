@@ -2,6 +2,9 @@
 
 <% @flavors.each do |flavor| %>
   <p><%= link_to flavor.flavor, "/flavors/#{flavor.id}" %></p>
+  <p>Shop: <%= flavor.shop_id %></p>
+  <p>Nut free: <%= flavor.nut_free %></p>
+  <p>Calories: <%= flavor.calories %></p>
 <% end %>
 
 
