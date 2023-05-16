@@ -28,5 +28,16 @@ RSpec.describe "flavors can be edited" do
     expect(current_path).to eq("/flavors/#{flavor.id}")
     expect(page).to have_content("Chocolate Chip")
   end
+  # As a visitor
+  # When I visit the `flavors` index page or a shops `flavors` index page
+  # Next to every child, I see a link to edit that flaovr's info
+  # When I click the link
+  # I should be taken to that `flavors` edit page where I can update its information
+  it "links to flavor edit page" do
+    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true, established: 1980)
+    flavor = shop.flavors.create!(flavor: "Chocolate", nut_free: true, calories: 600)
+    visit "/flavors"
+    click_link "Update Flavor"
+  end
 
 end 

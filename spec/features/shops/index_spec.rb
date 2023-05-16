@@ -31,4 +31,5 @@ RSpec.describe "shops index page" do
     click_link "All Shops"
     expect(current_path).to eq("/shops")
   end
+  
 end

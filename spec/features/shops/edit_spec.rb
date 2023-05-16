@@ -30,6 +30,16 @@ RSpec.describe "edit shop" do
     expect(current_path).to eq("/shops/#{shop.id}")
     expect(page).to have_content("North Pole Ice Cream")
   end
-
+  # As a visitor
+  # When I visit the shop index page
+  # Next to every parent, I see a link to edit that shop's info
+  # When I click the link
+  # I should be taken to that shop's edit page where I can update its information just like in User Story 12
+  it "can link to edit shop" do
+    shop = Shop.create!(name: "North Pole Creamery", hours: "11:00 - 2000", open_year_round: true, established: 1980)
+    visit "/shops"
+    click_link "Update Shop"
+    expect(current_path).to eq("/shops/#{shop.id}/edit")
+  end
 end
 

@@ -5,6 +5,7 @@
 <% @shops.each do |shop| %>
   <h3 li><a href="/shops/<%= shop.id %>"><%= shop.name %></h3></a></li>
   <h4>created_at <%= shop.created_at %></h4>
+  <%= link_to "Update Shop", "/shops/#{shop.id}/edit" %>
 <% end %>
 
 <%= link_to "New Shop", "/shops/new" %>
