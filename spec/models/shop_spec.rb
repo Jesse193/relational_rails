@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Shop, type: :model do
-   describe "validations" do
+   describe "relationships" do
       it {should have_many(:flavors)}
    end
    # As a visitor
@@ -15,6 +15,7 @@ describe Shop, type: :model do
       flavor2 = shop.flavors.create!(flavor: "Almond", nut_free: false, calories: 600)
       visit "/shops/#{shop.id}/flavors"
       click_link "Sort Flavors"
-      expect(shop.sort_by_alphabetical).to eq([flavor2, flavor])
+      expect(shop.sort_by_alphabetical("clicked")).to eq([flavor2, flavor])
+      expect(shop.sort_by_alphabetical("dog")).to eq([flavor, flavor2])
    end
 end

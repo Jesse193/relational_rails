@@ -1,8 +1,7 @@
 class ShopsController < ApplicationController
   
   def index
-    @shops = Shop.all
-    @shops = @shops.order("created_at DESC")
+    @shops = Shop.decending
     @flavors = Flavor.all
   end
 
@@ -27,6 +26,12 @@ class ShopsController < ApplicationController
     shop = Shop.find(params[:id])
     shop.update(shop_params)
     shop.save
+    redirect_to "/shops/#{shop.id}"
+  end
+
+  def destroy
+    shop = Shop.find(params[:shop_id])
+    shop.destroy
     redirect_to "/shops/#{shop.id}"
   end
   
