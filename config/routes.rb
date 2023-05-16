@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "/shops", to: "shops#index"
   get "/shops/new", to: "shops#new"
   get "/shops/:id", to: "shops#show"
+  get "/shops/:id/edit", to: "shops#edit"
+  patch "/shops/:id", to: "shops#update"
   post "/shops", to: "shops#create"
   get "/shops/:shop_id/flavors", to: "shop_flavors#index"
   get "/flavors", to: "flavors#index"

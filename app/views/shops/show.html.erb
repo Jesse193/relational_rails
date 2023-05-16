@@ -7,3 +7,4 @@
 <p>Established: <%= @shop.established %></p>
 <p>Flavor amount: <%= @shop.flavors.count %></p>
 <%= link_to "#{@shop.name} Flavors", "/shops/#{@shop.id}/flavors" %>
+<%= link_to "Update Shop", "/shops/#{@shop.id}/edit" %>
