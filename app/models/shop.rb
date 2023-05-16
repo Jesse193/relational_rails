@@ -1,3 +1,3 @@
-class Shop < ActiveRecord::Base
+class Shop < ApplicationRecord
   has_many :flavors
 end

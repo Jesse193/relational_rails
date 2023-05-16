@@ -1,3 +1,6 @@
+<%= link_to "All Flavors", "/flavors" %>
+<%= link_to "All Shops", "/shops" %>
+
 <h1>Flavors</h1>
 <% @flavors.each do |flavor| %>
   <h3 li><a href="/flavors/<%= flavor.id %>"><%= flavor.flavor %></h3></a></li>

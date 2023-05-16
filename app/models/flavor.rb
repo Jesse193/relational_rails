@@ -1,4 +1,3 @@
-class Flavor < ActiveRecord::Base
+class Flavor < ApplicationRecord
   belongs_to :shop
-  
 end
