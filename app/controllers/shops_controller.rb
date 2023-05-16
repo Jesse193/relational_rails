@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
   end
 
   def create
-    Shop.create(shop_params)
+    Shop.create!(shop_params)
     redirect_to "/shops"
   end
 

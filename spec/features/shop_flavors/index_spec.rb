@@ -26,5 +26,5 @@ RSpec.describe "shop flavors" do
     click_link "#{shop.name} Flavors"
     expect(current_path).to eq("/shops/#{shop.id}/flavors")
   end
-
+  
 end

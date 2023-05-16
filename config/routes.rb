@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   post "/shops", to: "shops#create"
   get "/shops/:shop_id/flavors", to: "shop_flavors#index"
   get "/flavors", to: "flavors#index"
+  get "/shops/:shop_id/flavors/new", to: "shop_flavors#new"
   get "/flavors/:id", to: "flavors#show"
+  post "/shops/:shop_id/flavors", to: "shop_flavors#create"
 end
