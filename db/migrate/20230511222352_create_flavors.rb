@@ -4,7 +4,7 @@ class CreateFlavors < ActiveRecord::Migration[7.0]
       t.string :flavor
       t.boolean :nut_free
       t.integer :calories
-      t.references :shops, null: false, foreign_key: true
+      t.references :shop, null: false, foreign_key: true
 
       t.timestamps
     end
